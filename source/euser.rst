@@ -13,10 +13,31 @@ The machine main configuration parameters are the following:
 PARAMETER VALUE
 ========= =====
 hardware  Tower PC
-Kernel    2.6.18-128.1.1.el5 x86_64
-hostname  euser
+CPU       Intel(R) Core(TM) i5-4690K CPU @ 3.50GHz
+RAM       8GB
+OS        CentOS Linux release 7.2.1511 (Core)
+Kernel    3.10.0-327.36.3.el7.x86_64
+hostname  euser.noto.ira.inaf.it
 eth0      192.167.187.16
 ========= =====
+
+USERS AND GROUPS
+~~~~~~~~~~~~~~~~
+
+Users and groups are defined so that data access is possible to the observers and according to 
+the escs machine schema, this permits to mount NFS filesystems from escs machine without
+issues. 
+
+We have user **euser** belonging to group **acs**, and acs id is **335** 
+
+NFS
+~~~
+
+The **/archive** filesystem from escs machine is mounted via NFS into this machine. 
+The binding is realized via fstab:: 
+
+        192.167.187.17:/exports/archive /archive        nfs     rw,soft,auto,intr,proto=tcp,port=2049,users,exec     0 0
+
 
 IDL
 ~~~

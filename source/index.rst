@@ -15,7 +15,6 @@ is the analogous of Nuraghe, installed at SRT, and ESCS installed at Medicina.
 
    Introduction <intro>
    machines
-   backup
    location
 
 .. Indices and tables
